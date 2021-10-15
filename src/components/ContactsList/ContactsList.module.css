@@ -1,0 +1,14 @@
+.contactsListTitle {
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    font-style: italic;
+   
+    display: block;
+    text-align: center;
+}
+
+.item {
+    color: white;
+    font-size: 25px;
+}

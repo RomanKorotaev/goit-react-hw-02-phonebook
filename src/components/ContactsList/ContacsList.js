@@ -6,11 +6,10 @@ class ContactsList extends Component {
     const { contacts } = this.props;
 
     return (
-      <ul>
-        {" "}
-        Contacts
+      <ul >
+        <span className= {s.contactsListTitle}>Contacts</span>
         {contacts.map(({id, name, number}) => (
-          <li key = {id}>
+          <li  className= {s.item} key = {id}>
             <p> <span> {name}</span> <span>{number}</span></p>
           </li>
         ))}

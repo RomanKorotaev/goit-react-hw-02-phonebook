@@ -1,21 +1,22 @@
 body {
-  text-align: center;
+  text-align: left;
   background-color: rgb(58, 20, 2);
   /* background-image: url("./image/phoneBookBackgr.jpg"); */
-  background-image: url("./image/workspaceImg.jpg");
-  background-size: cover;
+  background-image: url("./image/woodTable.jpg");
+  /* background-size: cover; */
   background-repeat: no-repeat;
+  background-repeat:repeat;
 }
 
 .container {
-  width: 300px;
+  width: 400px;
   height: auto;
 
   padding: 20px;
 
-  margin-left: 70px;
+  /* margin-left: 170px; */
 
-  /* margin: 0 auto; */
+  margin: 0 auto;
   margin-top: 30px;
 
   border: 1px solid white;

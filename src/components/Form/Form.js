@@ -55,9 +55,11 @@ class Form extends Component {
     return (
       // <form onSubmit={this.props.onFormSubmit}>
       <form onSubmit={this.handleFormSubmit}>
+      
         <label className={s.nameTitle}>
           Name:
           <input
+          className={s.inputStyleClass }
             type="text"
             name="name"
             value={this.state.name}
@@ -68,21 +70,24 @@ class Form extends Component {
             required
           />
         </label>
+      
 
         <label className={s.nameTitle}>
           Number:
           <input
+              className={s.inputStyleClass }
               type="tel"
               name="number"
               value={this.state.number}
               onChange={this.handleChange}
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
               title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
+              placeholder="Введите номер: 000-00-00"
               required
           />
                 </label> 
 
-        <button type="submit"> Add contact </button>
+        <button className={s.addBtm}  type="submit"> Add contact </button>
       </form>
     );
   }
