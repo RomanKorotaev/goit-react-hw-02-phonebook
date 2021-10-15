@@ -16,9 +16,9 @@ class ContactForm extends Component {
              [name]: e.currentTarget.value
              });
 
-        console.log("Сработало изменение инпута Form.js)", e);
-        console.log("e.currentTarget.value: ", e.currentTarget.value);
-        console.log("e.currentTarget.name: ", e.currentTarget.name);
+        // console.log("Сработало изменение инпута Form.js)", e);
+        // console.log("e.currentTarget.value: ", e.currentTarget.value);
+        // console.log("e.currentTarget.name: ", e.currentTarget.name);
 
   };
 

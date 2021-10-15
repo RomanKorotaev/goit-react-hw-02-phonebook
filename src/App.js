@@ -32,12 +32,16 @@ class App extends Component {
       number: data.number
     }
 
+    this.isExist(data);
+
     // Обновляем прежнее состояние массива через распыление
     this.setState((prevState) => {
       return {
         contacts: [newContact, ...prevState.contacts ],
       };
     });
+
+    
   };
 
   changeFilter = e => {
@@ -53,6 +57,22 @@ class App extends Component {
     //Используем метод Array.filter() c MDN. Проверяем есть ли значение из фильтра в массиве контактов (ищем по значению имени)
     return contacts.filter(contact => contact.name.toLowerCase().includes(normalizedFilter));
   }
+
+
+  // Функция о выводе предупреждения, если пользователь хочет добавить контакты, имена которых уже есть в телефонной книге.
+  //Её вызов делаем внутри функции сабмита формы formSubmitHandler
+  isExist  = (data) => {
+    //ои нового полученного объекта с новм контактом берём name переводим в нижний регистр и ищем такие же имена в существующем списке контактов
+    const { contacts } =  this.state;
+    const  normalizedNewName = data.name.toLowerCase ();
+    const tmpArray = contacts.filter(contact => contact.name.toLowerCase().includes(normalizedNewName));
+
+    if (tmpArray.length!==0) {
+      alert (`${tmpArray[0].name} is already in contacts`)
+    }
+
+  }
+  
 
   render() {
 
