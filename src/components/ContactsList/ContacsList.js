@@ -7,7 +7,7 @@ class ContactsList extends Component {
 
     return (
       <ul >
-        <span className= {s.contactsListTitle}>Contacts</span>
+        {/* <span className= {s.contactsListTitle}>Contacts</span> */}
         {contacts.map(({id, name, number}) => (
           <li  className= {s.item} key = {id}>
             <p> <span> {name}</span> <span>{number}</span></p>

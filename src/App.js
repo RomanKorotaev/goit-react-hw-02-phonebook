@@ -4,7 +4,7 @@ import React, { Component } from "react";
 
 import shortid from 'shortid'
 
-import Form from "./components/Form";
+import ContactForm from "./components/ContactForm";
 import ContactsList from "./components/ContactsList";
 import Filter from "./components/Filter";
 
@@ -70,14 +70,18 @@ console.log ("Рендерим из  App текущий список конта�
     const { contacts } = this.state;
     return (
       <div className={s.container}>
-        {/* <Form name={this.state.name} onFormSubmit={this.handleAddContact} /> */}
-        <Form name={this.state.name}  number={this.state.number} onFormSubmit={this.formSubmitHandler} />
+         
+         <h1 className={s.titlePhonebook}>Phonebook</h1>
+         <ContactForm name={this.state.name}  number={this.state.number} onFormSubmit={this.formSubmitHandler} />
        
-              {/* Это фильтр. Его значение мы не будем хранить в state стейте данной формы. Значение живого фильтра будет хранится в стейте App */}
-              <Filter value = {this.state.filter} handleFilter = {this.changeFilter}/>
 
-        {/* <ContactsList contacts={contacts} /> */}
-        <ContactsList contacts={visibleContacts} />       
+        <h2 className={s.contactsTitle}>Contacts</h2>
+
+          {/* Это фильтр. Его значение мы не будем хранить в state стейте данной формы. Значение живого фильтра будет хранится в стейте App */}
+          <Filter value = {this.state.filter} handleFilter = {this.changeFilter}/>
+
+          {/* <ContactsList contacts={contacts} /> */}
+          <ContactsList contacts={visibleContacts} />       
 
       </div>
     );

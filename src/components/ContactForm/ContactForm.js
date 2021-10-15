@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import s from "./Form.module.css";
+import s from "./ContactForm.module.css";
 
-class Form extends Component {
+class ContactForm extends Component {
   state = {
     name: "",
     number: "",
@@ -93,4 +93,4 @@ class Form extends Component {
   }
 }
 
-export default Form;
+export default ContactForm;
