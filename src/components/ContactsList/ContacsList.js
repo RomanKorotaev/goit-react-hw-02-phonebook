@@ -10,7 +10,7 @@ class ContactsList extends Component {
         {/* <span className= {s.contactsListTitle}>Contacts</span> */}
         {contacts.map(({id, name, number}) => (
           <li  className= {s.item} key = {id}>
-            <p> <span> {name}</span> <span>{number}</span></p >
+            <p> <span> {name} : </span> <span>{number}</span></p >
 
             <button type="button"
             className ={s.deleteBtn}
