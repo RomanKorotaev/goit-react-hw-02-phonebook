@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import s from "./ContactsList.module.css";
+import PropTypes from 'prop-types';
 
 
 class ContactsList extends Component {
@@ -38,6 +39,17 @@ class ContactsList extends Component {
     );
   }
 }
+
+ContactsList.propTypes = {
+ 
+  state: PropTypes.arrayOf(
+    // Объект с определённой структурой
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    }),
+  ), 
+};
 
 export default ContactsList;
 

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import s from "./Filter.module.css";
+import PropTypes from 'prop-types';
 
 class Filter extends Component {
 
@@ -22,5 +23,9 @@ class Filter extends Component {
         )
     }
 }
+
+Filter.propTypes = {
+  value: PropTypes.string,
+ }
 
 export default Filter;
