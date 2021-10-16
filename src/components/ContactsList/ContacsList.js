@@ -1,7 +1,21 @@
 import React, { Component } from "react";
 import s from "./ContactsList.module.css";
 
+
 class ContactsList extends Component {
+
+  state = {
+    
+    contacts: [ ],
+  };
+
+  deleteContact = (contactId) => {
+    this.setState ( prevState => ({
+      contacts: prevState.contacts.filter ( contact=> contact.id !== contactId)
+    }) )
+  }
+
+
   render() {
     const { contacts, onDeleteContact } = this.props;
 
@@ -20,21 +34,10 @@ class ContactsList extends Component {
           </li>
         ))}
       </ul>
+
     );
   }
 }
 
 export default ContactsList;
 
-// const TodoList = ({ todos, onDeleteTodo }) => (
-//   <ul className="TodoList">
-//     {todos.map(({ id, text }) => (
-//       <li key={id} className="TodoList__item">
-//         <p className="TodoList__text">{text}</p>
-//         <button onClick={() => onDeleteTodo(id)}>Удалить</button>
-//       </li>
-//     ))}
-//   </ul>
-// );
-
-// export default TodoList;
