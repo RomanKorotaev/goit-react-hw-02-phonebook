@@ -107,7 +107,7 @@ console.log ("Рендерим из  App текущий список конта�
           <Filter value = {this.state.filter} handleFilter = {this.changeFilter}/>
 
           {/* <ContactsList contacts={contacts} /> */}
-          <ContactsList contacts={visibleContacts} onDeleteContsct = {this.deleteContact}/>       
+          <ContactsList contacts={visibleContacts} onDeleteContact = {this.deleteContact}/>       
 
       </div>
     );
