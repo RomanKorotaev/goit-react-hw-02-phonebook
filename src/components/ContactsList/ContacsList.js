@@ -3,14 +3,19 @@ import s from "./ContactsList.module.css";
 
 class ContactsList extends Component {
   render() {
-    const { contacts } = this.props;
+    const { contacts, onDeleteContsct } = this.props;
 
     return (
       <ul >
         {/* <span className= {s.contactsListTitle}>Contacts</span> */}
         {contacts.map(({id, name, number}) => (
           <li  className= {s.item} key = {id}>
-            <p> <span> {name}</span> <span>{number}</span></p>
+            <p> <span> {name}</span> <span>{number}</span></p >
+
+            <button type="button"
+             onClick ={ () => onDeleteContsct(id) }
+              >Delete</button>
+
           </li>
         ))}
       </ul>
