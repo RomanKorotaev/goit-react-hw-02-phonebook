@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import s from "./ContactsList.module.css";
 import PropTypes from 'prop-types';
-
+import Contact from '../Contact'
 
 class ContactsList extends Component {
 
@@ -24,16 +24,12 @@ class ContactsList extends Component {
       <ul className= {s.ContactsListStyle}>
         {/* <span className= {s.contactsListTitle}>Contacts</span> */}
         {contacts.map(({id, name, number}) => (
-          <li  className= {s.item} key = {id}>
-            <p> <span> {name} : </span> <span>{number}</span></p >
+            <li  className= {s.item}  key = {id}>
 
-            <button type="button"
-            className ={s.deleteBtn}
-             onClick ={ () => onDeleteContact(id) }
-              >Delete</button>
-
-          </li>
-        ))}
+              {/* ВНИМАНИЕ!  Важный синтаксис во время прокидывания пропов по цепочке: onDelete = {()=>onDeleteContact(id)} */}
+                  <Contact name={name} number ={number} onDelete = {()=>onDeleteContact(id)} />
+            </li>
+          ))}
       </ul>
 
     );
